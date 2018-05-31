@@ -1,11 +1,11 @@
 package main
 
 import (
-    "os"
     "log"
-    "net/http"
+    "os"
 
     "github.com/chronicall/gophercon/pkg/routing"
+    "github.com/chronicall/gophercon/pkg/webserver"
 )
 
 // go run ./cmd/cmd.go
@@ -21,6 +21,7 @@ func main() {
     }
 
     r := routing.BaseRouter()
+    ws := webserver.New("", port, r)
 
-    log.Fatal(http.ListenAndServe(":" + port, r))
+    log.Fatal(ws.Start())
 }
