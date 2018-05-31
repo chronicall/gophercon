@@ -3,7 +3,7 @@ APP?=gophercon
 PORT?=8000
 INTERNAL_PORT?=8001
 
-RELEASE?=0.0.2
+RELEASE?=0.0.3
 COMMIT?=$(shell git rev-parse --short HEAD)
 BUILD_TIME?=$(shell date -u '+%Y-%m-%d_%H:%M:%S')
 
