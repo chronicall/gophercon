@@ -1,4 +1,4 @@
-FROM busybox
+FROM scratch
 
 ENV PORT 8000
 ENV INTERNAL_PORT 8001

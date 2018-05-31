@@ -7,13 +7,13 @@ RELEASE?=0.0.2
 COMMIT?=$(shell git rev-parse --short HEAD)
 BUILD_TIME?=$(shell date -u '+%Y-%m-%d_%H:%M:%S')
 
-CONTAINER_IMAGE?=webdeva/${APP}
+CONTAINER_IMAGE?=docker.io/webdeva/${APP}
 
 GOOS?=linux
 GOARCH?=amd64
 
 clean:
-	rm -f ./bin/${APP}
+	rm -f ./bin/${GOOS}-${GOARCH}/${APP}
 
 build: clean
 	env CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH} go build \
